@@ -1,87 +1,156 @@
 @import 'colors';
 @import 'media-queries';
 
-%align__center {
-    display: flex;
-    align-items: center;
-}
-
-.header {
-    position: fixed;
+.nav__container {
     width: 100%;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
+    background-color: $dark;
 
-    .navbar{
-        width: 100%;
-        background: $light;
+    .navbar {
+        display: grid;
+        grid-template-columns: 0.2fr auto 1fr;
+        align-items: center;
         height: 5rem;
-        display: flex;
-        justify-content: space-between;
-        padding: 0.5rem calc((100vw - 1200px) / 2);
-        z-index: 10;
-        position: relative;
+        width: 90%;
+        max-width: 1720px;
+        margin: 0 auto;
 
-        &__logo {
-            color: $dark;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 2rem;
-            margin-left: 1.5rem;
-            @extend %align__center;
+        .menu__toggle {
+
+            .bar {
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all .3s ease-in-out;
+                background: $light;
+            }
         }
 
-        &__bars {
-            opacity: 0;
-
-            @include tablet {
-                color: $dark;
-                opacity: 1;
-                position: absolute;
-                top: 1.375rem;
-                right: 0.625rem;
-                font-size: 2rem;
-            }
+        #navbar__logo {
+            color: $light;
+            justify-self: start;
+            margin-left: 1.25rem;
+            cursor: pointer;
         }
 
         &__menu {
-            @extend %align__center;
+            display: grid;
+            grid-template-columns: repeat(4, auto);
             list-style: none;
             text-align: center;
-            margin-right: 24px;
-
-            @include tablet {
-                display: none;
-            }
+            width: 70%;
+            justify-self: end;
 
             &--links {
-                color: $dark;
-                @extend %align__center;
-                justify-content: center;
+                color: $light;
                 text-decoration: none;
-                padding: 0 1rem;
-                transition: all .3s ease;
+                transition: all .3s ease-in-out;
 
                 &:hover {
                     color: $lime;
                 }
             }
 
-            #button {
-                padding: 12px 24px;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                background: $lime;
-                margin-left: 16px;
-                color: $light;
-                transition: all .3s ease;
+            &--links-btn {
+                background-color: $lime;
+                padding: 8px 16px;
+                border-radius: 6px;
+                transition: all .3s ease-in-out;
 
                 &:hover {
-                    background: $orangeRed;
+                    background-color: transparent;
+                    color: $light;
+                    border: solid 1px $lime;
+                    transition: all .3s ease-in-out;
                 }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .nav__container {
+        position: relative;
+
+        .navbar {
+            width: 100%;
+
+            &__menu {
+                display: grid;
+                grid-template-columns: auto;
+                background: $grey;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top: 5rem;
+                left: -100%;
+                opacity: 0;
+                transition: all .4s ease;
+
+                &--links {
+                    text-align: center;
+                    line-height: 3.75rem;
+                    width: 100%;
+                    display: table;
+
+                    &:hover {
+                        background: $grey;
+                        color: $light;
+                    }
+
+                    &-btn {
+                        padding: 0;
+                        border-radius: 0;
+                        transition: all .3s ease-in-out;
+                        background: $darkGrey;
+                        
+                        &:hover {
+                            border: none;
+                            color: $light;
+                            background: $lime;
+                        }
+                    }
+                        
+                    
+                }
+            }
+
+            #navbar__logo {
+                margin-left: 1.25rem;
+            }
+
+            &__menu.active {
+                background-color: $darkGrey;
+                left: 0;
+                opacity: 1;
+                transition: all .3s ease;
+            }
+
+            #mobile__menu {
+                position: absolute;
+                top: 30%;
+                right: 5%;
+                transform: translate(5%, 30%);
+            }
+
+            .menu__toggle .bar {
+                display: block;
+                cursor: pointer;
+            }
+
+            .menu__toggle:hover {
+                cursor: pointer;
+            }
+
+            #mobile__menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile__menu.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            #mobile__menu.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
         }
     }

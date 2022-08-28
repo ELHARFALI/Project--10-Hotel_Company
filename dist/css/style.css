@@ -1,81 +1,131 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;500;700;900&display=swap");
-.header .navbar__menu--links, .header .navbar__menu, .header .navbar__logo {
-  display: flex;
+.nav__container {
+  width: 100%;
+  background-color: #222121;
+}
+.nav__container .navbar {
+  display: grid;
+  grid-template-columns: 0.2fr auto 1fr;
   align-items: center;
-}
-
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-}
-.header .navbar {
-  width: 100%;
-  background: #f7f7f7;
   height: 5rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1200px) / 2);
-  z-index: 10;
-  position: relative;
+  width: 90%;
+  max-width: 1720px;
+  margin: 0 auto;
 }
-.header .navbar__logo {
-  color: #222121;
+.nav__container .navbar .menu__toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background: #f7f7f7;
+}
+.nav__container .navbar #navbar__logo {
+  color: #f7f7f7;
+  justify-self: start;
+  margin-left: 1.25rem;
   cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  margin-left: 1.5rem;
 }
-.header .navbar__bars {
-  opacity: 0;
-}
-@media screen and (max-width: 768px) {
-  .header .navbar__bars {
-    color: #222121;
-    opacity: 1;
-    position: absolute;
-    top: 1.375rem;
-    right: 0.625rem;
-    font-size: 2rem;
-  }
-}
-.header .navbar__menu {
+.nav__container .navbar__menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   list-style: none;
   text-align: center;
-  margin-right: 24px;
+  width: 70%;
+  justify-self: end;
 }
-@media screen and (max-width: 768px) {
-  .header .navbar__menu {
-    display: none;
-  }
-}
-.header .navbar__menu--links {
-  color: #222121;
-  justify-content: center;
+.nav__container .navbar__menu--links {
+  color: #f7f7f7;
   text-decoration: none;
-  padding: 0 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
-.header .navbar__menu--links:hover {
+.nav__container .navbar__menu--links:hover {
   color: #00cc66;
 }
-.header .navbar__menu #button {
-  padding: 12px 24px;
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  background: #00cc66;
-  margin-left: 16px;
-  color: #f7f7f7;
-  transition: all 0.3s ease;
+.nav__container .navbar__menu--links-btn {
+  background-color: #00cc66;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
 }
-.header .navbar__menu #button:hover {
-  background: #fb4b4e;
+.nav__container .navbar__menu--links-btn:hover {
+  background-color: transparent;
+  color: #f7f7f7;
+  border: solid 1px #00cc66;
+  transition: all 0.3s ease-in-out;
 }
 
+@media screen and (max-width: 768px) {
+  .nav__container {
+    position: relative;
+  }
+  .nav__container .navbar {
+    width: 100%;
+  }
+  .nav__container .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    background: #666666;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 5rem;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  .nav__container .navbar__menu--links {
+    text-align: center;
+    line-height: 3.75rem;
+    width: 100%;
+    display: table;
+  }
+  .nav__container .navbar__menu--links:hover {
+    background: #666666;
+    color: #f7f7f7;
+  }
+  .nav__container .navbar__menu--links-btn {
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    background: #333;
+  }
+  .nav__container .navbar__menu--links-btn:hover {
+    border: none;
+    color: #f7f7f7;
+    background: #00cc66;
+  }
+  .nav__container .navbar #navbar__logo {
+    margin-left: 1.25rem;
+  }
+  .nav__container .navbar__menu.active {
+    background-color: #333;
+    left: 0;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  .nav__container .navbar #mobile__menu {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    transform: translate(5%, 30%);
+  }
+  .nav__container .navbar .menu__toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+  .nav__container .navbar .menu__toggle:hover {
+    cursor: pointer;
+  }
+  .nav__container .navbar #mobile__menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__container .navbar #mobile__menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav__container .navbar #mobile__menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
 .hero {
   background-color: #f7f7f7;
   margin-top: 5rem;
