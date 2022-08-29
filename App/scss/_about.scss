@@ -1,0 +1,352 @@
+@import 'media-queries';
+
+.about {
+    padding-top: 4rem;
+    min-height: calc(100vh - 5rem);
+    width: 100%;
+    background-color: $lightGrey;
+
+    &__container {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .about__left {
+            display: grid;
+            width: 100%;
+            height: 100%;
+
+            &--top {
+                width: 80%;
+                height: 80%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    font-size: 7rem;
+                    color: $lime;
+                }
+            }
+
+            &--bottom {
+                width: 80%;
+                height: 80%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    font-size: 7rem;
+                    color: $lime;
+                }
+            }
+        }
+
+        .about__right {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            &--header {
+                margin-bottom: 1.5rem;
+
+                h1 {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                }
+
+                h3 {
+                    font-size: 1.5rem;
+
+                    span {
+                        color: $lime;
+                    }
+                }
+            }
+
+            &--text {
+                margin-bottom: 1.5rem;
+
+                p {
+                    font-size: 1.3rem;
+                    line-height: 2;
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            .btn a {
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: $light;
+                cursor: pointer;
+                background-color: $lime;
+                padding: 8px 16px;
+                border-radius: 8px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $lime;
+                    color: $dark;
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .about {
+    
+
+    &__container {
+        
+
+        .about__left {
+            
+
+            &--top {
+                
+
+                i {
+                    font-size: 5rem;
+                    color: $lime;
+                }
+            }
+
+            &--bottom {
+                
+
+                i {
+                    font-size: 5rem;
+                    color: $lime;
+                }
+            }
+        }
+
+        .about__right {
+            
+
+            &--header {
+                margin-bottom: 1.2rem;
+
+                h1 {
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+
+                    span {
+                        color: $lime;
+                    }
+                }
+            }
+
+            &--text {
+                margin-bottom: 1.2rem;
+
+                p {
+                    font-size: 1.2rem;
+                    line-height: 1.4;
+                    margin-bottom: 1.2rem;
+                }
+            }
+
+            .btn a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                color: $light;
+                cursor: pointer;
+                background-color: $lime;
+                padding: 8px 16px;
+                border-radius: 8px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $lime;
+                    color: $dark;
+                }
+            } 
+        }
+    }
+}
+}
+
+@include tablet {
+    .about {
+        width: 100%;
+        height: 100%;
+
+    &__container {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        
+
+        .about__left {
+
+            &--top {
+                width: 80%;
+                height: 80%;
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+
+                i {
+                    font-size: 3rem;
+                    color: $lime;
+                }
+            }
+
+            &--bottom {
+                width: 80%;
+                height: 80%;
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+
+                i {
+                    font-size: 3rem;
+                    color: $lime;
+                }
+            }
+        }
+
+        .about__right {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            &--header {
+                margin-bottom: 1.2rem;
+
+                h1 {
+                    font-size: 2.5rem;
+                    margin-bottom: 0.8rem;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+
+                    span {
+                        color: $lime;
+                    }
+                }
+            }
+
+            &--text {
+                margin-bottom: 1.2rem;
+
+                p {
+                    font-size: 1.1rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.2rem;
+                }
+            }
+
+            .btn a {
+                text-decoration: none;
+                font-size: 1.3rem;
+                color: $light;
+                cursor: pointer;
+                background-color: $lime;
+                padding: 8px 16px;
+                border-radius: 8px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $lime;
+                    color: $dark;
+                }
+            } 
+        }
+    }
+}
+}
+
+@include mobile {
+    .about {
+
+        &__container {
+            .about__right {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            &--header {
+                margin-bottom: 1.1rem;
+
+                h1 {
+                    font-size: 2.2rem;
+                    margin-bottom: 0.7rem;
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+
+                    span {
+                        color: $lime;
+                    }
+                }
+            }
+
+            &--text {
+                margin-bottom: 1.1rem;
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.2;
+                    margin-bottom: 1.1rem;
+                }
+            }
+
+            .btn a {
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: $light;
+                cursor: pointer;
+                background-color: $lime;
+                padding: 8px 16px;
+                border-radius: 8px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $lime;
+                    color: $dark;
+                }
+            } 
+        }
+        }
+    }
+}
