@@ -2,6 +2,10 @@
 .nav__container {
   width: 100%;
   background-color: #222121;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .nav__container .navbar {
   display: grid;
@@ -54,9 +58,9 @@
   transition: all 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .nav__container {
-    position: relative;
+    position: fixed;
   }
   .nav__container .navbar {
     width: 100%;
@@ -127,126 +131,59 @@
   }
 }
 .hero {
+  margin-top: 4.6rem;
+  width: 100%;
+  height: calc(100vh - 5rem);
   background-color: #f7f7f7;
-  margin-top: 5rem;
 }
 .hero__container {
+  width: 80%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
   margin: 0 auto;
-  height: 90vh;
-  z-index: 1;
-  width: 100%;
-  max-width: 1200px;
-  padding-right: 24px;
-  padding-left: 24px;
 }
-@media screen and (max-width: 768px) {
-  .hero__container {
-    grid-template-columns: 1fr;
-    height: 100%;
-  }
-  .hero__container--left {
-    width: 100%;
-    line-height: 1.2;
-  }
+.hero__container .hero__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
-@media screen and (max-width: 768px) and (max-width: 768px) {
-  .hero__container--left {
-    padding: 5rem 0;
-  }
+.hero__container .hero__left--title h1 {
+  color: #00cc66;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
 }
-@media screen and (max-width: 768px) and (max-width: 280px) {
-  .hero__container--left {
-    line-height: 1.5;
-  }
+.hero__container .hero__left--description {
+  color: #222121;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
-@media screen and (max-width: 768px) {
-  .hero__container--left h1 {
-    font-size: 4rem;
-    color: #00cc66;
-  }
+.hero__container .hero__left .btn a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #f7f7f7;
+  cursor: pointer;
+  background-color: #00cc66;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
-@media screen and (max-width: 768px) and (max-width: 768px) {
-  .hero__container--left h1 {
-    font-size: 1.5rem;
-  }
+.hero__container .hero__left .btn a:hover {
+  background-color: transparent;
+  border: 2px solid #00cc66;
+  color: #222121;
 }
-@media screen and (max-width: 768px) {
-  .hero__container--left h2 {
-    font-size: 4rem;
-    color: #222121;
-  }
+.hero__container .hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (max-width: 768px) and (max-width: 768px) {
-  .hero__container--left h2 {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--left p {
-    font-size: 2rem;
-    color: #222121;
-    margin-top: 1rem;
-    font-weight: 700;
-  }
-}
-@media screen and (max-width: 768px) and (max-width: 768px) {
-  .hero__container--left p {
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--btn {
-    font-size: 1rem;
-    background-color: #00cc66;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 4px;
-    color: #f7f7f7;
-    margin-top: 2rem;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--btn a {
-    position: relative;
-    text-decoration: none;
-    z-index: 2;
-    color: #f7f7f7;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--btn::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #fb4b4e;
-    transition: all 0.3s;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--btn:hover::after {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--right {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero__container--img {
-    width: 100%;
-    height: 100%;
-  }
+.hero__container .hero__right .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 * {
@@ -254,6 +191,10 @@
   margin: 0;
   padding: 0;
   font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  height: 300vh;
 }
 
 html {

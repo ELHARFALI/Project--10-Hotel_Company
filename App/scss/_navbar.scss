@@ -4,6 +4,10 @@
 .nav__container {
     width: 100%;
     background-color: $dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
     .navbar {
         display: grid;
@@ -69,7 +73,7 @@
 
 @include tablet {
     .nav__container {
-        position: relative;
+        position: fixed;
 
         .navbar {
             width: 100%;
