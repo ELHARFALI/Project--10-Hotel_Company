@@ -665,6 +665,205 @@
   }
 }
 
+.contact {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  background-color: #B2BABB;
+}
+.contact__container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media screen and (max-width: 1200px) {
+  .contact__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+.contact__container .left {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+.contact__container .left .image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact__container .left .image img {
+  width: 100%;
+}
+.contact__container .right {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+.contact__container .right .fields {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__container .right .fields h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .contact__container .right .fields h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.contact__container .right .fields form {
+  text-align: center;
+}
+.contact__container .right .fields form span {
+  margin-right: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .contact__container .right .fields form span {
+    margin-right: 0.6rem;
+  }
+}
+.contact__container .right .fields form input {
+  width: 80%;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .contact__container .right .fields form input {
+    width: 60%;
+    height: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+}
+.contact__container .right .fields form input::-moz-placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form input:-ms-input-placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form input::placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: #fff;
+}
+.contact__container .right .fields form textarea::-moz-placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form textarea:-ms-input-placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form textarea::placeholder {
+  padding-left: 0.3rem;
+}
+.contact__container .right .fields form button {
+  width: 50%;
+  padding: 8px 16px;
+  margin-top: 1.11rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #00cc66;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.contact__container .right .fields form button:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+.footer__container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+.footer__container .left {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.footer__container .left h3:nth-child(1) {
+  padding: 1rem 0;
+}
+.footer__container .left h3:nth-child(3) {
+  padding: 1rem 0;
+}
+.footer__container .center {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+.footer__container .center i {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.footer__container .center i:hover {
+  color: #00cc66;
+}
+.footer__container .right {
+  height: 100%;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .footer__container .right {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__container .right {
+    font-size: 1.3rem;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
