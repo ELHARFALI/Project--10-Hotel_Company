@@ -1,8 +1,9 @@
 @import 'media-queries';
 
 .about {
-    padding-top: 4rem;
-    min-height: calc(100vh - 5rem);
+    // padding-top: 8rem;
+    height: calc(100vh - 5rem);
+    // height: 100%;
     width: 100%;
     background-color: $lightGrey;
 
@@ -186,25 +187,23 @@
 
 @include tablet {
     .about {
-        width: 100%;
-        height: 100%;
 
     &__container {
         height: 100%;
         width: 80%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         text-align: center;
         
 
         .about__left {
-
+            margin: 1rem 0;
             &--top {
                 width: 80%;
                 height: 80%;
                 display: grid;
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 justify-content: center;
                 align-items: center;
                 margin: auto;
@@ -219,7 +218,7 @@
                 width: 80%;
                 height: 80%;
                 display: grid;
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 justify-content: center;
                 align-items: center;
                 margin: auto;
@@ -242,7 +241,7 @@
             text-align: center;
 
             &--header {
-                margin-bottom: 1.2rem;
+                margin: 1.1rem 0;
 
                 h1 {
                     font-size: 2.5rem;
@@ -291,6 +290,7 @@
 
 @include mobile {
     .about {
+        height: calc(110vh - 5rem);
 
         &__container {
             .about__right {
@@ -324,10 +324,14 @@
                 margin-bottom: 1.1rem;
 
                 p {
-                    font-size: 1rem;
-                    line-height: 1.2;
-                    margin-bottom: 1.1rem;
+                    font-size: 0.8rem;
+                    line-height: 1.1;
+                    // margin-bottom: 0.8rem;
                 }
+            }
+
+            .btn {
+                margin-bottom: 2rem;
             }
 
             .btn a {
@@ -350,3 +354,4 @@
         }
     }
 }
+

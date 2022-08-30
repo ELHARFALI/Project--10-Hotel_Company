@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 99;
 }
 .nav__container .navbar {
   display: grid;
@@ -251,8 +252,7 @@
   }
 }
 .about {
-  padding-top: 4rem;
-  min-height: calc(100vh - 5rem);
+  height: calc(100vh - 5rem);
   width: 100%;
   background-color: #E5E8E8;
 }
@@ -386,23 +386,22 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .about {
-    width: 100%;
-    height: 100%;
-  }
   .about__container {
     height: 100%;
     width: 80%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     text-align: center;
+  }
+  .about__container .about__left {
+    margin: 1rem 0;
   }
   .about__container .about__left--top {
     width: 80%;
     height: 80%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -415,7 +414,7 @@
     width: 80%;
     height: 80%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     margin: auto;
@@ -435,7 +434,7 @@
     text-align: center;
   }
   .about__container .about__right--header {
-    margin-bottom: 1.2rem;
+    margin: 1.1rem 0;
   }
   .about__container .about__right--header h1 {
     font-size: 2.5rem;
@@ -472,6 +471,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .about {
+    height: calc(110vh - 5rem);
+  }
   .about__container .about__right {
     display: flex;
     flex-direction: column;
@@ -499,9 +501,11 @@
     margin-bottom: 1.1rem;
   }
   .about__container .about__right--text p {
-    font-size: 1rem;
-    line-height: 1.2;
-    margin-bottom: 1.1rem;
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+  .about__container .about__right .btn {
+    margin-bottom: 2rem;
   }
   .about__container .about__right .btn a {
     text-decoration: none;
@@ -519,6 +523,148 @@
     color: #222121;
   }
 }
+.services {
+  height: 100%;
+  width: 100%;
+  background-color: #CCD1D1;
+  padding-bottom: 3.1rem;
+}
+.services .title {
+  text-align: center;
+}
+.services .title h1 {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+@media screen and (max-width: 900px) {
+  .services .title h1 {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services .title h1 {
+    padding: 1.3rem 0;
+    font-size: 1.7rem;
+  }
+}
+.services__container {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .services__container {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .services__container {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .services__container {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+.services__container .card {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  border: 3px solid #222121;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.services__container .card__icon {
+  font-size: 6rem;
+  color: #00cc66;
+  padding: 2rem;
+  border-bottom: 3px solid #222121;
+}
+@media screen and (max-width: 768px) {
+  .services__container .card__icon {
+    font-size: 5rem;
+  }
+}
+.services__container .card__description {
+  padding: 2rem 1rem;
+}
+@media screen and (max-width: 768px) {
+  .services__container .card__description {
+    padding: 1rem 0.5rem;
+  }
+}
+.services__container .card__description h2 {
+  font-size: 2rem;
+  padding-bottom: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .services__container .card__description h2 {
+    font-size: 1.8rem;
+    padding-bottom: 1.1rem;
+  }
+}
+.services__container .card__description p {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  padding-bottom: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .services__container .card__description p {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+}
+.services__container .card__description .card-btn {
+  text-decoration: none;
+  background-color: #CCD1D1;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #222121;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .services__container .card__description .card-btn {
+    font-size: 1.1rem;
+  }
+}
+.services__container .card__description .card-btn:hover {
+  background-color: #222121;
+  color: #f7f7f7;
+}
+.services__container .card:hover {
+  transform: scale(1.0825);
+}
+@media screen and (max-width: 768px) {
+  .services__container .card:hover {
+    transform: scale(1.0425);
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
